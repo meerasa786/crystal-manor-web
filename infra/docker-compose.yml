@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    container_name: crystal_manor_db
+    environment:
+      POSTGRES_DB: crystal_manor
+      POSTGRES_USER: crystal
+      POSTGRES_PASSWORD: crystalpass
+    ports:
+      - "5432:5432"
+    volumes:
+      - crystal_manor_pg:/var/lib/postgresql/data
+
+volumes:
+  crystal_manor_pg:
